@@ -1,0 +1,50 @@
+:root {
+    --primary-color:#bc0505;
+    --secondary-color: #f3f3f3;
+    --white-color: #fff;
+    --dark-color: #000;
+}
+
+body {
+    background-color: var(--secondary-color);
+} 
+
+.punter__header h1 {
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.punter__category__link {
+    padding: 10px 18px;
+    background-color: var(--primary-color) !important;
+}
+
+.punter__category__link a{
+    margin-right: 8px;
+    color: var(--white-color);
+}
+
+.booking_code {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.punter__bet__prediction {
+    position: relative;
+}
+
+.punter__bet__status {
+    position: absolute;
+    font-size: 11px;
+    top: 8px;
+    right: 6px;
+    z-index: 99;
+    background-color: var(--secondary-color);
+    padding: 4px 8px;
+    border-radius: 20px;
+}

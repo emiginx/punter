@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container bg-white rounded pt-4 pb-5">
+        <div class="container">
+            <div class="punter__navbar">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <div class="punter__header mb-4">
+                            <h1 class="mb-0 fw-bold">Bet Punter</h1>
+                            <small>The home for big winners...</small>
+                        </div>
+                        <div class="punter__category__link rounded">
+                            {% for category in categories  %}
+                                <a href="{% url 'index' %}">{{ category.title }}</a>
+                            {% endfor %}
+                        </div>
+
+                        <div class="punter_header_datetime mt-3">
+                            <b>Today's DateTime:</b> 3rd September, 2023 | 12:45 AM
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+    <div class="punter__footer container my-4 pt-4 pb-2 bg-white rounded">
+        <div class="punter__footer_text text-center"><p>Copyright <b>&copy; 2024</b> | Built by <a href="https://github.com/emiginx" target="_blank" rel="noopener noreferrer">Emiginx</a></p></div>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Punter | A home for big winners{% endblock %}
+
+
+{% block content %}
+<div class="container mt-4 py-3 pb-4 bg-white rounded">
+    <div class="punter_block_title mb-4 text-center">
+        <h3 class="fw-bold">Latest Predictions</h3>
+    </div>
+
+    <div class="punter__predictions py-3 px-4">
+        <div class="row justify-content-center align-items-center g-4">
+            
+            {% for prediction in predictions %}
+            <div class="col-md-6 col-lg-3">
+                <a href="{% url 'index' %}">
+                    <div class="punter__bet__prediction card">
+                        <div class="punter__bet__status text-{% if prediction.status == 'won' %}success{% elif prediction.status == 'lost' %}danger{% else %}warning{% endif %}">{{ prediction.status | capfirst }}</div>
+                        <div class="card-img-top text-center">
+                            <img class="img-fluid" src="{% static prediction.image %}" alt="{{prediction.category}}" style="height: 150px">
+                        </div>
+                        <hr class="mt-1">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap">
+                                <div class="title">
+                                    <h6>{{prediction.category}}</h6>
+                                </div>
+                                <div class="booking_code ms-auto">
+                                    <small>{{prediction.booking_code}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+                
+            
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
