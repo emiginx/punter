@@ -7,6 +7,7 @@
 
 body {
     background-color: var(--secondary-color);
+    font-family: 'Nunito', sans-serif;
 } 
 
 .punter__header h1 {

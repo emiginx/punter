@@ -4,5 +4,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index")
+    path("", views.index, name="index"),
+    path("detail/<str:id>", views.detail, name="detail"),
+    path("category/<str:id>", views.category, name="category")
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

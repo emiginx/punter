@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Punter | A home for big winners{% endblock %}
+
+
+{% block content %}
+<div class="container mt-4 py-3 pb-4 bg-white rounded">
+    <div class="row justify-content-center align-items-center px-md-4 g-3">
+        <div class="col-md-4 mb-3 mb-md-0 text-center">
+            <img class="img-fluid" src="{% static prediction.image %}" alt="{{prediction.category}}" style="height: 250px; width: 250px">
+        </div>
+        <div class="col-md-8">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+                <div class="category">
+                    <p><b>Category: </b> <span> {{prediction.category}}</span></p>
+                </div>
+                <div class="booking_company">
+                    <p><b>Company: </b> <span> {{prediction.booking_company}}</span></p>
+                </div>
+                <div class="booking_code">
+                    <p><b>Booking Code: </b> <span> {{prediction.booking_code}}</span></p>
+                </div>
+                <div class="bet_time">
+                    <p><b>Date Posted: </b> <span> {{prediction.created_at}}</span></p>
+                </div>
+            </div>
+            <p class="description">
+                {{prediction.description}}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

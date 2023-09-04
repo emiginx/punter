@@ -50,13 +50,13 @@
                 <a class="pagination-item" href="?page=1">&laquo; First</a>
                 <a class="pagination-item" href="?page={{ predictions.previous_page_number }}">Previous</a>
             {% endif %}
-            
+    
             {% if predictions.paginator_num_pages > 1 %}
             <span class="current">
                 Page {{ predictions.number }} of {{ predictions.paginator.num_pages }}.
             </span>
             {% endif %}
-    
+            
             {% if predictions.has_next %}
                 <a class="pagination-item" href="?page={{ predictions.next_page_number }}">Next</a>
                 <a class="pagination-item" href="?page={{ predictions.paginator.num_pages }}">Last &raquo;</a>
