@@ -42,5 +42,24 @@
             
         </div>
     </div>
+    
+    
+    <div class="pagination d-flex align-items-center justify-content-center mt-4">
+        <span class="step-links text-center">
+            {% if predictions.has_previous %}
+                <a class="pagination-item" href="?page=1">&laquo; First</a>
+                <a class="pagination-item" href="?page={{ predictions.previous_page_number }}">Previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ predictions.number }} of {{ predictions.paginator.num_pages }}.
+            </span>
+    
+            {% if predictions.has_next %}
+                <a class="pagination-item" href="?page={{ predictions.next_page_number }}">Next</a>
+                <a class="pagination-item" href="?page={{ predictions.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 </div>
 {% endblock %}
