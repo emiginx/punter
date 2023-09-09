@@ -1,3 +1,3 @@
 # punter web app
 
-This is a simple prredictions listing site
+This is a simple predictions listing site
